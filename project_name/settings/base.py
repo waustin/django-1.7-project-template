@@ -32,6 +32,10 @@ TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
+# DATABASE Configured by URL
+import dj_database_url
+DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
